@@ -209,6 +209,11 @@ a.doc:hover{border-color:#4A4F59;background:#16181C}
 .qa summary::after{content:"";flex:none;width:10px;height:10px;margin:0 6px 4px 0;border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(45deg);transition:transform .2s}
 .qa[open] summary::after{transform:rotate(-135deg);margin-bottom:-4px}
 .qa p{padding:0 2px 18px;max-width:46em;text-wrap:pretty}
+.qa p b{color:#fff}
+.qa ul{margin:-8px 0 0;padding:0 2px 18px 22px;max-width:46em;list-style:disc}
+.qa li{margin-top:6px}
+.hero-doc + .hero-doc{margin-top:8px}
+#versions{margin-top:28px}
 
 /* footer */
 footer{padding:32px 0 40px;border-top:1px solid rgba(255,255,255,.06);background:#08090A;color:var(--dim);font-size:.875rem}
@@ -309,7 +314,7 @@ footer{padding:32px 0 40px;border-top:1px solid rgba(255,255,255,.06);background
       <a href="#temps">Возможности</a>
       <a href="#install">Установка</a>
       <a href="#models">Совместимость</a>
-      <a href="#docs">Инструкции</a>
+      <a href="#docs">Скачать</a>
       <a href="#order">Цена</a>
     </nav>
     <div class="top-links">
@@ -333,6 +338,7 @@ footer{padding:32px 0 40px;border-top:1px solid rgba(255,255,255,.06);background
           <a class="btn" href="https://max.ru/channel_justlad" target="_blank" rel="noopener"><svg class="ico solid"><use href="#i-chat"/></svg>Канал в&nbsp;MAX</a>
         </div>
         <p class="hero-doc"><a href="pdf/jmonitor-obzor-vozmozhnostey.pdf" download="Общий обзор возможностей.pdf"><svg class="ico"><use href="#i-file"/></svg>Скачать обзор возможностей</a><span>PDF · 2,5&nbsp;МБ</span></p>
+        <p class="hero-doc"><a href="app/jwidget-2.2.8.apk" download="jwidget-2.2.8.apk"><svg class="ico"><use href="#i-down"/></svg>Скачать приложение JWidget</a><span>APK · 3,4&nbsp;МБ</span></p>
         <p class="need">Нужна Android-магнитола: Android&nbsp;8.0 или новее, с&nbsp;<span class="nb">Wi-Fi</span>.</p>
       </div>
       <figure class="hero-photo">
@@ -584,10 +590,21 @@ footer{padding:32px 0 40px;border-top:1px solid rgba(255,255,255,.06);background
 
 <section class="sec" id="docs">
   <div class="wrap">
-    <p class="kicker">Инструкции</p>
-    <h2>Всё подробно&nbsp;— в&nbsp;четырёх файлах</h2>
-    <p class="sub">PDF на&nbsp;русском, с&nbsp;картинками. Начните с&nbsp;общего обзора.</p>
+    <p class="kicker">Скачать</p>
+    <h2>Приложение и&nbsp;инструкции</h2>
+    <p class="sub">Приложение JWidget для магнитолы и&nbsp;четыре инструкции в&nbsp;PDF на&nbsp;русском, с&nbsp;картинками.</p>
     <div class="docs">
+      <div class="doc main" id="app">
+        <div class="fi"><svg class="ico"><use href="#i-down"/></svg></div>
+        <div class="tx">
+          <h3>Приложение JWidget</h3>
+          <p>Для Android-магнитолы: Android&nbsp;8.0 или новее. Ставится из&nbsp;файла .apk.</p>
+          <p class="meta">APK · версия 2.2.8 · 3,4 МБ</p>
+        </div>
+        <div class="acts">
+          <a class="btn primary" href="app/jwidget-2.2.8.apk" download="jwidget-2.2.8.apk"><svg class="ico"><use href="#i-down"/></svg>Скачать приложение</a>
+        </div>
+      </div>
       <div class="doc main">
         <div class="fi"><svg class="ico"><use href="#i-file"/></svg></div>
         <div class="tx">
@@ -623,7 +640,7 @@ footer{padding:32px 0 40px;border-top:1px solid rgba(255,255,255,.06);background
         <div class="tx">
           <h3>Обзор разделов и&nbsp;настроек приложения</h3>
           <p>Каждый раздел и&nbsp;каждая настройка, с&nbsp;картинками экранов.</p>
-          <p class="meta">PDF · 10 стр. · 1,0 МБ</p>
+          <p class="meta">PDF · 9 стр. · 0,9 МБ</p>
         </div>
         <svg class="ico dl" aria-hidden="true"><use href="#i-down"/></svg>
       </a>
@@ -668,9 +685,29 @@ footer{padding:32px 0 40px;border-top:1px solid rgba(255,255,255,.06);background
       <details class="qa"><summary>На&nbsp;моей машине будет давление в&nbsp;шинах?</summary><p>Если на&nbsp;ней есть штатная система контроля давления (TPMS) и&nbsp;это дорестайлинг&nbsp;— да.</p></details>
       <details class="qa"><summary>Не&nbsp;посадит аккумулятор?</summary><p>Устройство засыпает вместе с&nbsp;автомобилем, когда шина затихла.</p></details>
       <details class="qa"><summary>На&nbsp;каком языке приложение?</summary><p>Интерфейс приложения&nbsp;— на&nbsp;английском. Инструкции&nbsp;— на&nbsp;русском, с&nbsp;картинками экранов.</p></details>
-      <details class="qa"><summary>Приложение есть в&nbsp;магазине приложений?</summary><p>Нет, оно ставится из&nbsp;файла .apk. Файл и&nbsp;обновления вы&nbsp;получаете от&nbsp;автора проекта.</p></details>
+      <details class="qa"><summary>Приложение есть в&nbsp;магазине приложений?</summary><p>Нет, оно ставится из&nbsp;файла .apk. Файл&nbsp;— на&nbsp;этой странице, в&nbsp;разделе <a href="#app">«Приложение и&nbsp;инструкции»</a>. Новые версии появляются там&nbsp;же.</p></details>
       <details class="qa"><summary>Что, если обновление пройдёт неудачно?</summary><p>Устройство само вернётся к&nbsp;прежней прошивке и&nbsp;будет работать как раньше.</p></details>
       <details class="qa"><summary>Можно снять перед визитом к&nbsp;дилеру?</summary><p>Да: отсоединить аккумулятор, снять козырёк, вынуть жгут, вставить штатный разъём обратно.</p></details>
+    </div>
+    <div class="faq" id="versions">
+      <details class="qa">
+        <summary>Версии</summary>
+        <p><b>Приложение JWidget&nbsp;— 2.2.8</b> от&nbsp;16&nbsp;ноября 2026&nbsp;г.<br><b>Прошивка JMonitor&nbsp;— 2.2.2</b>, идёт внутри приложения.</p>
+        <p>Что нового в&nbsp;2.2.8:</p>
+        <ul>
+          <li>Приложение находит устройство само&nbsp;— и&nbsp;сразу после установки, и&nbsp;когда устройство подключено к&nbsp;вашей точке доступа. Настраивать связь не&nbsp;нужно.</li>
+          <li>Обновление устройства&nbsp;— одной кнопкой: подключитесь к&nbsp;его <span class="nb">Wi-Fi</span>, заведите двигатель и&nbsp;нажмите «Update the monitor».</li>
+        </ul>
+        <p>Что появилось в&nbsp;2.2.7, 13&nbsp;ноября 2026&nbsp;г.:</p>
+        <ul>
+          <li>Устройство само определяет автомобиль: дорестайлинг или рестайлинг, АКПП или МКПП.</li>
+          <li>Давление в&nbsp;шинах&nbsp;— на&nbsp;автомобилях со&nbsp;штатной TPMS.</li>
+          <li>Экран Live parameters показывает переключатели автомобиля.</li>
+          <li>Температуру, при которой срабатывает сигнал перегрева, задаёте сами.</li>
+          <li>МКПП: давление во&nbsp;впускном коллекторе, атмосферное давление и&nbsp;наддув.</li>
+          <li>Рестайлинг: давление в&nbsp;тормозной системе.</li>
+        </ul>
+      </details>
     </div>
   </div>
 </section>
