@@ -11,280 +11,20 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
 <meta property="og:site_name" content="JMonitor + JWidget">
 <meta property="og:title" content="JMonitor + JWidget — всё, о чём молчит приборная панель Jimny">
 <meta property="og:description" content="Температура двигателя и АКПП, сигнал перегрева и до 27 показаний на экране Android-магнитолы. Для Suzuki Jimny JB64 / JB74 / JC74.">
 <link rel="canonical" href="https://jmonitor.ru/">
+<link rel="alternate" hreflang="ru" href="https://jmonitor.ru/">
+<link rel="alternate" hreflang="en" href="https://jmonitor.ru/en/">
+<link rel="alternate" hreflang="x-default" href="https://jmonitor.ru/">
 <meta property="og:url" content="https://jmonitor.ru/">
 <meta property="og:image" content="https://jmonitor.ru/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<style>
-:root{
-  --bg:#0A0B0D; --band:#0E0F12; --panel:#121317; --panel-2:#181A1F; --line:#23262C; --line-2:#30343C;
-  --ink:#fff; --text:rgba(255,255,255,.80); --dim:rgba(255,255,255,.58); --faint:rgba(255,255,255,.40);
-  --accent:#FF5530; --on-accent:#160B07; --amber:#FFB02E; --ok:#49D17D;
-  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",Arial,sans-serif;
-  --mono:ui-monospace,"JetBrains Mono","Cascadia Mono","Roboto Mono","SF Mono",Menlo,Consolas,monospace;
-}
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:68px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
-img,svg{display:block}
-img{max-width:100%;height:auto}
-h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0}
-ul,ol{padding:0;list-style:none}
-a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px}
-:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:6px}
-.ico{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
-.ico.solid{fill:currentColor;stroke:none}
-.nb{white-space:nowrap}
-.skip{position:absolute;left:-999px;top:8px;z-index:50;padding:10px 14px;border-radius:10px;background:#fff;color:#000;font-weight:700}
-.skip:focus{left:8px}
-.wrap{max-width:1152px;margin-inline:auto;padding-inline:16px}
-
-/* type */
-.kicker{font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
-h1,h2,h3{color:var(--ink);text-wrap:balance;overflow-wrap:break-word}
-h1{margin-top:12px;font-size:clamp(2rem,6.6vw + .45rem,3.4rem);line-height:1.06;font-weight:800;letter-spacing:-.018em}
-h2{margin-top:10px;font-size:clamp(1.6rem,3.2vw + .8rem,2.375rem);line-height:1.12;font-weight:800;letter-spacing:-.014em}
-h3{font-size:1.0625rem;line-height:1.3;font-weight:700}
-.lead{margin-top:16px;font-size:clamp(1.0625rem,.6vw + .95rem,1.25rem);line-height:1.5;text-wrap:pretty}
-.sub{margin-top:14px;max-width:44em;font-size:1.0625rem;text-wrap:pretty}
-.note{margin-top:18px;font-size:.9375rem;color:var(--dim);text-wrap:pretty}
-.note a{color:#fff}
-
-/* buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:50px;padding:0 20px;border-radius:14px;border:1px solid var(--line-2);background:var(--panel-2);color:#fff;font-weight:700;font-size:1rem;text-decoration:none;transition:background .15s,border-color .15s,transform .15s}
-.btn:hover{border-color:#4A4F59;background:#1E2127}
-.btn:active{transform:translateY(1px)}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
-.btn.primary:hover{background:#FF6A48;border-color:#FF6A48}
-.cta{display:grid;gap:10px;margin-top:24px}
-
-/* header */
-.top{position:sticky;top:0;z-index:20;background:rgba(10,11,13,.84);-webkit-backdrop-filter:saturate(140%) blur(14px);backdrop-filter:saturate(140%) blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
-.top-in{display:flex;align-items:center;gap:12px;min-height:56px}
-.brand{font-weight:800;font-size:17px;color:#fff;text-decoration:none;letter-spacing:.01em;white-space:nowrap}
-.brand i{font-style:normal;color:var(--accent)}
-.brand .b2{display:none}
-.nav{display:none}
-.nav a{color:var(--dim);text-decoration:none;font-size:15px;font-weight:500}
-.nav a:hover{color:#fff}
-.top-links{margin-left:auto;display:flex;gap:8px}
-.pill{display:inline-flex;align-items:center;gap:7px;min-height:40px;padding:0 13px;border-radius:999px;border:1px solid var(--line-2);background:var(--panel-2);color:#fff;font-size:14px;font-weight:600;text-decoration:none}
-.pill:hover{border-color:#4A4F59}
-.pill .ico{width:16px;height:16px}
-
-/* hero */
-.hero{padding:32px 0 40px;background:radial-gradient(80% 60% at 92% 0%,rgba(255,85,48,.18),rgba(255,85,48,0) 70%),linear-gradient(180deg,#15171B 0%,var(--bg) 72%)}
-.hero-in{display:grid;gap:28px}
-.hero-doc{margin-top:18px;display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;font-size:.9375rem;color:var(--dim)}
-.hero-doc a{display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:600}
-.need{margin-top:14px;font-size:.875rem;color:var(--dim)}
-.hero-photo img{width:100%;border-radius:18px;border:1px solid var(--line-2);box-shadow:0 24px 60px rgba(0,0,0,.55)}
-.hero-photo figcaption{margin-top:10px;font-size:.8125rem;color:var(--faint);text-align:center}
-.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:36px}
-.stat{padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07)}
-.stat b{display:block;font-size:1.75rem;line-height:1.1;font-weight:800;color:#fff;font-variant-numeric:tabular-nums;letter-spacing:-.01em;white-space:nowrap}
-.stat span{display:block;margin-top:4px;font-size:.875rem;line-height:1.35;color:var(--dim)}
-
-/* sections */
-.sec{padding:56px 0}
-.sec.alt{background:var(--band);border-block:1px solid rgba(255,255,255,.05)}
-.split{display:grid;gap:32px}
-.points{margin-top:22px;display:grid;gap:13px}
-.points li{position:relative;padding-left:26px;text-wrap:pretty}
-.points li::before{content:"";position:absolute;left:4px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--accent)}
-.points b{color:#fff}
-
-/* card pictures */
-.stage{border-radius:22px;border:1px solid var(--line);background:radial-gradient(110% 80% at 50% 0%,#1C1F25 0%,#0D0E11 72%);padding:24px 16px}
-.jw{text-align:center;min-width:0}
-.jw img{width:264px;margin-inline:auto;filter:drop-shadow(0 16px 28px rgba(0,0,0,.6))}
-.jw figcaption{margin-top:12px;font-size:.875rem;font-weight:600;color:var(--dim)}
-.jw figcaption.hot{color:var(--amber)}
-.jw figcaption b{display:block;color:#fff;font-size:.9375rem}
-.jw figcaption span{font-weight:400}
-.pair{display:grid;gap:24px;justify-items:center}
-.faces{display:grid;grid-template-columns:264fr 120fr;grid-template-areas:"pit col" "min col";gap:22px 16px;align-items:center;max-width:720px;margin-inline:auto}
-.faces .jw img{width:100%}
-.faces .pit{grid-area:pit}.faces .min{grid-area:min}.faces .col{grid-area:col}
-.showcase{display:grid;gap:24px;margin-top:26px}
-.showcase .points{margin-top:0}
-
-/* readings */
-.groups{display:grid;margin-top:24px;border-top:1px solid var(--line)}
-.g{padding:13px 0;border-bottom:1px solid var(--line)}
-.g p{margin-top:3px;font-size:.9375rem;line-height:1.45;color:var(--dim)}
-.lp{position:relative;overflow:hidden;border-radius:20px;background:#111215;border:1px solid var(--line);font-size:.9375rem}
-.lp-h{display:flex;align-items:center;gap:12px;padding:16px 18px 6px;color:#fff;font-weight:700;font-size:1.0625rem}
-.lp-h .ico{color:var(--dim)}
-.lp-meta{padding:0 18px 12px;font:12px/1.4 var(--mono);color:var(--faint)}
-.lp-r{display:flex;justify-content:space-between;gap:16px;padding:10px 18px;border-top:1px solid rgba(255,255,255,.05)}
-.lp-r dt{color:rgba(255,255,255,.66)}
-.lp-r dd{font-family:var(--mono);color:#fff;white-space:nowrap}
-.lp-sw{padding:16px 18px 8px;border-top:1px solid rgba(255,255,255,.05);font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--dim)}
-.lp-more{position:absolute;inset:auto 0 0 0;padding:64px 18px 16px;background:linear-gradient(180deg,rgba(17,18,21,0),#111215 64%);text-align:center;font-size:.875rem;color:var(--dim)}
-.lp-cap{margin-top:12px;font-size:.8125rem;color:var(--faint);text-align:center}
-
-/* how it works */
-.flow{display:grid;gap:10px;margin-top:30px}
-.node{display:flex;gap:14px;align-items:center;padding:16px;border-radius:16px;background:var(--panel);border:1px solid var(--line)}
-.node.hl{border-color:rgba(255,85,48,.55);background:linear-gradient(180deg,rgba(255,85,48,.11),rgba(255,85,48,.03))}
-.node .ni{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.06);color:#fff;flex:none}
-.node.hl .ni{background:rgba(255,85,48,.18);color:var(--accent)}
-.node .ni .ico{width:24px;height:24px}
-.node b{display:block;color:#fff;font-size:1.0625rem}
-.node span{display:block;font-size:.9375rem;line-height:1.4;color:var(--dim)}
-.hop{display:flex;align-items:center;justify-content:center;gap:8px;color:var(--accent);font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-.hop .ico{width:18px;height:18px;transform:rotate(90deg)}
-.facts{display:grid;gap:22px 28px;margin-top:36px}
-.fact{padding-left:16px;border-left:2px solid var(--accent)}
-.fact p{margin-top:4px;font-size:.9375rem;color:var(--dim);text-wrap:pretty}
-
-/* install */
-.warn{display:flex;gap:12px;align-items:flex-start;margin-top:22px;padding:14px 16px;border-radius:14px;background:rgba(255,176,46,.09);border:1px solid rgba(255,176,46,.36);color:#FFD9A0}
-.warn .ico{width:22px;height:22px;margin-top:1px;color:var(--amber)}
-.warn b{color:#fff}
-.steps{display:grid;grid-template-columns:1fr 1fr;gap:20px 12px;margin-top:22px}
-.step{position:relative;min-width:0}
-.step:nth-child(3){grid-column:1/-1}
-.step img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;border:1px solid var(--line)}
-.step .n{position:absolute;left:10px;top:10px;width:36px;height:36px;border-radius:50%;background:var(--accent);color:var(--on-accent);font-weight:800;font-size:1.0625rem;display:grid;place-items:center}
-.step p{margin-top:10px;font-size:.9375rem;line-height:1.4;text-wrap:pretty}
-.step p b{color:#fff}
-.after{margin-top:22px;max-width:46em;text-wrap:pretty}
-.more{margin-top:20px}
-
-/* models */
-.defs{margin-top:16px;display:grid;gap:6px;font-size:.9375rem;color:var(--dim)}
-.defs b{color:#fff}
-.models{display:grid;gap:12px;margin-top:24px}
-.model{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:14px;align-items:start;padding:18px;border-radius:18px;background:var(--panel);border:1px solid var(--line)}
-.model .gen{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
-.model h3{margin-top:2px;font-size:1.25rem}
-.model .num{margin-top:10px;font-size:.875rem;line-height:1.35;color:var(--dim)}
-.model .num b{display:block;font-size:2.4rem;line-height:1;font-weight:800;color:var(--accent);font-variant-numeric:tabular-nums}
-.has{display:grid;gap:8px;font-size:.9375rem}
-.has li{display:flex;gap:8px;align-items:flex-start;line-height:1.35}
-.has .ico{margin-top:2px;color:var(--ok)}
-.has li.no,.has li.no .ico{color:var(--faint)}
-.callout{margin-top:22px;padding:14px 16px;border-radius:14px;background:var(--panel-2);border:1px solid var(--line-2);text-wrap:pretty}
-.callout b{color:#fff}
-
-/* documents */
-.docs{display:grid;gap:12px;margin-top:26px}
-.doc{display:flex;gap:14px;align-items:flex-start;padding:18px;border-radius:18px;background:var(--panel);border:1px solid var(--line);text-decoration:none;color:inherit;min-width:0}
-a.doc:hover{border-color:#4A4F59;background:#16181C}
-.doc .fi{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(255,85,48,.13);color:var(--accent);flex:none}
-.doc .fi .ico{width:22px;height:22px}
-.doc .tx{min-width:0;flex:1}
-.doc p{margin-top:4px;font-size:.9375rem;line-height:1.45;color:var(--dim)}
-.doc .meta{margin-top:8px;font:12.5px/1.3 var(--mono);color:var(--faint)}
-.doc .dl{flex:none;align-self:center;width:22px;height:22px;color:var(--dim)}
-.doc.main{flex-wrap:wrap;border-color:rgba(255,85,48,.5);background:linear-gradient(135deg,rgba(255,85,48,.13),rgba(255,85,48,.02) 60%),var(--panel)}
-.doc.main h3{font-size:1.375rem}
-.doc.main .tx{flex:1 1 220px}
-.doc.main .acts{display:grid;gap:10px;width:100%;margin-top:4px}
-
-/* order */
-.order-photo img{width:100%;border-radius:20px;border:1px solid var(--line)}
-.box{margin-top:20px;display:grid;gap:10px}
-.box li{display:flex;gap:10px;align-items:flex-start}
-.box .ico{margin-top:3px;color:var(--ok)}
-.price{margin-top:26px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
-.price b{font-size:2.75rem;line-height:1;font-weight:800;color:#fff;letter-spacing:-.02em;white-space:nowrap}
-.price span{font-size:1.0625rem;font-weight:600;color:#fff}
-.price + .note{margin-top:10px}
-.where{margin-top:26px;font-weight:600;color:#fff}
-.where + .cta{margin-top:12px}
-
-/* faq */
-.faq{margin-top:26px;max-width:820px;border-top:1px solid var(--line)}
-.qa{border-bottom:1px solid var(--line)}
-.qa summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:56px;padding:14px 2px;color:#fff;font-weight:600;font-size:1.0625rem;line-height:1.35}
-.qa summary::-webkit-details-marker{display:none}
-.qa summary::after{content:"";flex:none;width:10px;height:10px;margin:0 6px 4px 0;border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(45deg);transition:transform .2s}
-.qa[open] summary::after{transform:rotate(-135deg);margin-bottom:-4px}
-.qa p{padding:0 2px 18px;max-width:46em;text-wrap:pretty}
-.qa p b{color:#fff}
-.qa ul{margin:-8px 0 0;padding:0 2px 18px 22px;max-width:46em;list-style:disc}
-.qa li{margin-top:6px}
-.hero-doc + .hero-doc{margin-top:8px}
-#versions{margin-top:28px}
-
-/* footer */
-footer{padding:32px 0 40px;border-top:1px solid rgba(255,255,255,.06);background:#08090A;color:var(--dim);font-size:.875rem}
-.foot{display:grid;gap:18px}
-.foot .brand{font-size:16px}
-.foot-links{display:flex;flex-wrap:wrap;gap:8px}
-.legal{max-width:52em;color:var(--faint);text-wrap:pretty}
-
-@media (min-width:440px){
-  .brand .b2{display:inline}
-}
-@media (min-width:480px){
-  .cta{display:flex;flex-wrap:wrap}
-  .doc.main .acts{display:flex;flex-wrap:wrap}
-}
-@media (min-width:560px){
-  .pair{grid-template-columns:1fr 1fr;gap:18px}
-  .groups{grid-template-columns:1fr 1fr;column-gap:28px}
-  .facts{grid-template-columns:1fr 1fr}
-  .models{grid-template-columns:1fr 1fr}
-  .model{display:block}
-  .has{margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
-}
-@media (min-width:600px){
-  .wrap{padding-inline:24px}
-  .stage{padding:28px 24px}
-}
-@media (min-width:680px){
-  .faces{grid-template-columns:264fr 264fr 120fr;grid-template-areas:"pit min col";gap:28px;align-items:start}
-}
-@media (min-width:720px){
-  .steps{grid-template-columns:repeat(3,1fr);gap:20px}
-  .step:nth-child(3){grid-column:auto}
-  .step .n{left:12px;top:12px;width:40px;height:40px;font-size:1.125rem}
-  .step p{font-size:1rem}
-}
-@media (min-width:800px){
-  .hero{padding:56px 0 64px}
-  .stats{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:56px}
-  .stat{padding:18px 20px}
-  .stat b{font-size:2.125rem}
-  .sec{padding:92px 0}
-  .foot{grid-template-columns:1fr auto;align-items:center}
-  .legal{grid-column:1/-1}
-}
-@media (min-width:860px){
-  .flow{grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:14px}
-  .node{flex-direction:column;align-items:flex-start;padding:20px}
-  .hop{flex-direction:column;gap:4px;padding-inline:2px}
-  .hop .ico{transform:none;width:22px;height:22px}
-  .docs{grid-template-columns:repeat(3,1fr);gap:14px}
-  .doc.main{grid-column:1/-1;flex-wrap:nowrap;align-items:center;padding:24px}
-  .doc.main .acts{width:auto;margin:0;flex:none}
-}
-@media (min-width:940px){
-  .wrap{padding-inline:32px}
-  .nav{display:flex;gap:22px;margin-left:28px}
-  .hero-in{grid-template-columns:minmax(0,1fr) minmax(0,1.06fr);gap:52px;align-items:center}
-  .hero-photo img{border-radius:24px}
-  .split{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:56px;align-items:center}
-  .showcase{grid-template-columns:minmax(0,1fr) 300px;gap:48px;align-items:center}
-  .facts{grid-template-columns:repeat(3,1fr)}
-}
-@media (min-width:1000px){
-  .models{grid-template-columns:repeat(4,1fr);gap:14px}
-}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .btn,.qa summary::after{transition:none}
-}
-</style>
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
 
@@ -318,8 +58,9 @@ footer{padding:32px 0 40px;border-top:1px solid rgba(255,255,255,.06);background
       <a href="#order">Цена</a>
     </nav>
     <div class="top-links">
-      <a class="pill" href="https://t.me/just_lad_jimny" target="_blank" rel="noopener"><svg class="ico solid"><use href="#i-tg"/></svg>Telegram</a>
-      <a class="pill" href="https://max.ru/channel_justlad" target="_blank" rel="noopener"><svg class="ico solid"><use href="#i-chat"/></svg>MAX</a>
+      <a class="pill" href="https://t.me/justlad" target="_blank" rel="noopener" aria-label="Написать в Telegram"><svg class="ico solid"><use href="#i-tg"/></svg><span class="t">Telegram</span></a>
+      <a class="pill" href="https://max.ru/u/f9LHodD0cOIjPCg4uz_D2USYwDrlml-fD2-_0W9jn6hEyryjJQ_RfUxWfsA" target="_blank" rel="noopener" aria-label="Написать в MAX"><svg class="ico solid"><use href="#i-chat"/></svg><span class="t">MAX</span></a>
+      <nav class="lang" aria-label="Язык"><a href="./" hreflang="ru" lang="ru" aria-current="page">RU</a><a href="en/" hreflang="en" lang="en">EN</a></nav>
     </div>
   </div>
 </header>
@@ -334,11 +75,11 @@ footer{padding:32px 0 40px;border-top:1px solid rgba(255,255,255,.06);background
         <h1>Всё, о&nbsp;чём молчит приборная панель Jimny</h1>
         <p class="lead">JMonitor выводит на&nbsp;Android-магнитолу температуру двигателя и&nbsp;АКПП в&nbsp;градусах, предупреждает о&nbsp;перегреве и&nbsp;показывает ещё два десятка показаний автомобиля. Включается в&nbsp;разрыв штатного разъёма&nbsp;— без резки проводов.</p>
         <div class="cta">
-          <a class="btn primary" href="https://t.me/just_lad_jimny" target="_blank" rel="noopener"><svg class="ico solid"><use href="#i-tg"/></svg>Telegram-канал</a>
-          <a class="btn" href="https://max.ru/channel_justlad" target="_blank" rel="noopener"><svg class="ico solid"><use href="#i-chat"/></svg>Канал в&nbsp;MAX</a>
+          <a class="btn primary" href="https://t.me/justlad" target="_blank" rel="noopener"><svg class="ico solid"><use href="#i-tg"/></svg>Написать в&nbsp;Telegram</a>
+          <a class="btn" href="https://max.ru/u/f9LHodD0cOIjPCg4uz_D2USYwDrlml-fD2-_0W9jn6hEyryjJQ_RfUxWfsA" target="_blank" rel="noopener"><svg class="ico solid"><use href="#i-chat"/></svg>Написать в&nbsp;MAX</a>
         </div>
         <p class="hero-doc"><a href="pdf/jmonitor-obzor-vozmozhnostey.pdf" download="Общий обзор возможностей.pdf"><svg class="ico"><use href="#i-file"/></svg>Скачать обзор возможностей</a><span>PDF · 2,5&nbsp;МБ</span></p>
-        <p class="hero-doc"><a href="app/jwidget-2.2.8.apk" download="jwidget-2.2.8.apk"><svg class="ico"><use href="#i-down"/></svg>Скачать приложение JWidget</a><span>APK · 3,4&nbsp;МБ</span></p>
+        <p class="hero-doc"><a href="app/jwidget-2.2.9.apk" download="jwidget-2.2.9.apk"><svg class="ico"><use href="#i-down"/></svg>Скачать приложение JWidget</a><span>APK · 3,4&nbsp;МБ</span></p>
         <p class="need">Нужна Android-магнитола: Android&nbsp;8.0 или новее, с&nbsp;<span class="nb">Wi-Fi</span>.</p>
       </div>
       <figure class="hero-photo">
@@ -599,10 +340,10 @@ footer{padding:32px 0 40px;border-top:1px solid rgba(255,255,255,.06);background
         <div class="tx">
           <h3>Приложение JWidget</h3>
           <p>Для Android-магнитолы: Android&nbsp;8.0 или новее. Ставится из&nbsp;файла .apk.</p>
-          <p class="meta">APK · версия 2.2.8 · 3,4 МБ</p>
+          <p class="meta">APK · версия 2.2.9 · 3,4 МБ</p>
         </div>
         <div class="acts">
-          <a class="btn primary" href="app/jwidget-2.2.8.apk" download="jwidget-2.2.8.apk"><svg class="ico"><use href="#i-down"/></svg>Скачать приложение</a>
+          <a class="btn primary" href="app/jwidget-2.2.9.apk" download="jwidget-2.2.9.apk"><svg class="ico"><use href="#i-down"/></svg>Скачать приложение</a>
         </div>
       </div>
       <div class="doc main">
@@ -663,10 +404,10 @@ footer{padding:32px 0 40px;border-top:1px solid rgba(255,255,255,.06);background
       </ul>
       <p class="price"><b>7&nbsp;000&nbsp;₽</b><span>Доставка&nbsp;— СДЭК</span></p>
       <p class="note">Приложение JWidget и&nbsp;обновления&nbsp;— бесплатно.</p>
-      <p class="where">Подробности и&nbsp;заказ&nbsp;— в&nbsp;каналах:</p>
+      <p class="where">Заказ и&nbsp;вопросы:</p>
       <div class="cta">
-        <a class="btn primary" href="https://t.me/just_lad_jimny" target="_blank" rel="noopener"><svg class="ico solid"><use href="#i-tg"/></svg>Telegram-канал</a>
-        <a class="btn" href="https://max.ru/channel_justlad" target="_blank" rel="noopener"><svg class="ico solid"><use href="#i-chat"/></svg>Канал в&nbsp;MAX</a>
+        <a class="btn primary" href="https://t.me/justlad" target="_blank" rel="noopener"><svg class="ico solid"><use href="#i-tg"/></svg>Написать в&nbsp;Telegram</a>
+        <a class="btn" href="https://max.ru/u/f9LHodD0cOIjPCg4uz_D2USYwDrlml-fD2-_0W9jn6hEyryjJQ_RfUxWfsA" target="_blank" rel="noopener"><svg class="ico solid"><use href="#i-chat"/></svg>Написать в&nbsp;MAX</a>
       </div>
     </div>
   </div>
@@ -684,7 +425,7 @@ footer{padding:32px 0 40px;border-top:1px solid rgba(255,255,255,.06);background
       <details class="qa"><summary>Почему на&nbsp;моей машине показаний меньше?</summary><p>Автомобиль с&nbsp;МКПП не&nbsp;передаёт температуру коробки, а&nbsp;рестайлинг не&nbsp;передаёт часть показаний двигателя. Чего машина не&nbsp;передаёт, приложение показывает прочерком.</p></details>
       <details class="qa"><summary>На&nbsp;моей машине будет давление в&nbsp;шинах?</summary><p>Если на&nbsp;ней есть штатная система контроля давления (TPMS) и&nbsp;это дорестайлинг&nbsp;— да.</p></details>
       <details class="qa"><summary>Не&nbsp;посадит аккумулятор?</summary><p>Устройство засыпает вместе с&nbsp;автомобилем, когда шина затихла.</p></details>
-      <details class="qa"><summary>На&nbsp;каком языке приложение?</summary><p>Интерфейс приложения&nbsp;— на&nbsp;английском. Инструкции&nbsp;— на&nbsp;русском, с&nbsp;картинками экранов.</p></details>
+      <details class="qa"><summary>На&nbsp;каком языке приложение?</summary><p>Интерфейс приложения&nbsp;— на&nbsp;английском. Инструкции&nbsp;— на&nbsp;русском и&nbsp;английском, с&nbsp;картинками экранов.</p></details>
       <details class="qa"><summary>Приложение есть в&nbsp;магазине приложений?</summary><p>Нет, оно ставится из&nbsp;файла .apk. Файл&nbsp;— на&nbsp;этой странице, в&nbsp;разделе <a href="#app">«Приложение и&nbsp;инструкции»</a>. Новые версии появляются там&nbsp;же.</p></details>
       <details class="qa"><summary>Что, если обновление пройдёт неудачно?</summary><p>Устройство само вернётся к&nbsp;прежней прошивке и&nbsp;будет работать как раньше.</p></details>
       <details class="qa"><summary>Можно снять перед визитом к&nbsp;дилеру?</summary><p>Да: отсоединить аккумулятор, снять козырёк, вынуть жгут, вставить штатный разъём обратно.</p></details>
@@ -692,20 +433,15 @@ footer{padding:32px 0 40px;border-top:1px solid rgba(255,255,255,.06);background
     <div class="faq" id="versions">
       <details class="qa">
         <summary>Версии</summary>
-        <p><b>Приложение JWidget&nbsp;— 2.2.8</b> от&nbsp;16&nbsp;ноября 2026&nbsp;г.<br><b>Прошивка JMonitor&nbsp;— 2.2.2</b>, идёт внутри приложения.</p>
-        <p>Что нового в&nbsp;2.2.8:</p>
+        <p><b>Приложение JWidget&nbsp;— 2.2.9</b> от&nbsp;20&nbsp;ноября 2026&nbsp;г.<br><b>Прошивка JMonitor&nbsp;— 2.2.2</b>, идёт внутри приложения.</p>
+        <p>Что нового в&nbsp;2.2.9:</p>
+        <ul>
+          <li>Работает рядом с&nbsp;беспроводным Android Auto и&nbsp;CarPlay: телефон подключён к&nbsp;<span class="nb">Wi-Fi</span> адаптера, устройство&nbsp;— к&nbsp;точке доступа телефона, и&nbsp;приложение находит устройство, когда&nbsp;бы ни&nbsp;включили точку доступа.</li>
+        </ul>
+        <p>Что появилось в&nbsp;2.2.8, 16&nbsp;ноября 2026&nbsp;г.:</p>
         <ul>
           <li>Приложение находит устройство само&nbsp;— и&nbsp;сразу после установки, и&nbsp;когда устройство подключено к&nbsp;вашей точке доступа. Настраивать связь не&nbsp;нужно.</li>
           <li>Обновление устройства&nbsp;— одной кнопкой: подключитесь к&nbsp;его <span class="nb">Wi-Fi</span>, заведите двигатель и&nbsp;нажмите «Update the monitor».</li>
-        </ul>
-        <p>Что появилось в&nbsp;2.2.7, 13&nbsp;ноября 2026&nbsp;г.:</p>
-        <ul>
-          <li>Устройство само определяет автомобиль: дорестайлинг или рестайлинг, АКПП или МКПП.</li>
-          <li>Давление в&nbsp;шинах&nbsp;— на&nbsp;автомобилях со&nbsp;штатной TPMS.</li>
-          <li>Экран Live parameters показывает переключатели автомобиля.</li>
-          <li>Температуру, при которой срабатывает сигнал перегрева, задаёте сами.</li>
-          <li>МКПП: давление во&nbsp;впускном коллекторе, атмосферное давление и&nbsp;наддув.</li>
-          <li>Рестайлинг: давление в&nbsp;тормозной системе.</li>
         </ul>
       </details>
     </div>
@@ -718,8 +454,9 @@ footer{padding:32px 0 40px;border-top:1px solid rgba(255,255,255,.06);background
   <div class="wrap foot">
     <a class="brand" href="#top">JMonitor <i>+</i> JWidget</a>
     <div class="foot-links">
-      <a class="pill" href="https://t.me/just_lad_jimny" target="_blank" rel="noopener"><svg class="ico solid"><use href="#i-tg"/></svg>Telegram</a>
-      <a class="pill" href="https://max.ru/channel_justlad" target="_blank" rel="noopener"><svg class="ico solid"><use href="#i-chat"/></svg>MAX</a>
+      <span>Канал о&nbsp;разработке:</span>
+      <a class="pill" href="https://t.me/just_lad_jimny" target="_blank" rel="noopener" aria-label="Канал о разработке в Telegram"><svg class="ico solid"><use href="#i-tg"/></svg>Telegram</a>
+      <a class="pill" href="https://max.ru/channel_justlad" target="_blank" rel="noopener" aria-label="Канал о разработке в MAX"><svg class="ico solid"><use href="#i-chat"/></svg>MAX</a>
     </div>
     <p class="legal">JMonitor и&nbsp;JWidget&nbsp;— независимый проект, не&nbsp;связанный с&nbsp;Suzuki Motor Corporation. Suzuki и&nbsp;Jimny&nbsp;— товарные знаки их владельцев.</p>
   </div>

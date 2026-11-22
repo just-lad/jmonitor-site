@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JMonitor + JWidget — Suzuki Jimny temperatures and readings on your head unit</title>
+<meta name="description" content="JMonitor puts the engine and gearbox temperature, an overheat alarm and up to 27 readings of your Suzuki Jimny JB64 / JB74 / JC74 on an Android head unit. It plugs in between factory connectors; no wire is cut.">
+<meta name="theme-color" content="#0A0B0D">
+<meta name="color-scheme" content="dark">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="JMonitor + JWidget">
+<meta property="og:title" content="JMonitor + JWidget — everything your Jimny’s dashboard doesn’t tell you">
+<meta property="og:description" content="Engine and gearbox temperature, an overheat alarm and up to 27 readings on an Android head unit. For the Suzuki Jimny JB64 / JB74 / JC74.">
+<link rel="canonical" href="https://jmonitor.ru/en/">
+<link rel="alternate" hreflang="ru" href="https://jmonitor.ru/">
+<link rel="alternate" hreflang="en" href="https://jmonitor.ru/en/">
+<link rel="alternate" hreflang="x-default" href="https://jmonitor.ru/">
+<meta property="og:url" content="https://jmonitor.ru/en/">
+<meta property="og:image" content="https://jmonitor.ru/img/og-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-tg" viewBox="0 0 24 24"><path d="M21.6 3.3 2.7 10.6c-.9.4-.9 1.6.1 1.9l4.7 1.5 1.8 5.6c.2.8 1.2 1 1.7.4l2.6-2.6 4.7 3.5c.6.4 1.4.1 1.6-.6L23 4.6c.2-.9-.6-1.6-1.4-1.3ZM9.4 13.7l8.3-5.3-6.4 6.7-.3 3.2-1.6-4.6Z"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M12 3C6.9 3 3 6.6 3 11.2c0 2.3 1 4.3 2.7 5.8-.1 1.2-.6 2.5-1.5 3.5 1.9-.1 3.6-.8 4.8-1.7 1 .3 2 .4 3 .4 5.1 0 9-3.6 9-8S17.1 3 12 3Z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M20 12H5"/><path d="m11 6-6 6 6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M6 12h12"/></symbol>
+    <symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 4 2.8 20h18.4z"/><path d="M12 10v5"/><path d="M12 17.7v.1"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path d="M4 15v-3.2l1.9-5.1A1.6 1.6 0 0 1 7.4 5.6h9.2a1.6 1.6 0 0 1 1.5 1.1L20 11.8V15"/><path d="M3 15h18v3H3z"/><path d="M6.5 18v1.6M17.5 18v1.6M5 11.6h14"/></symbol>
+    <symbol id="i-chip" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></symbol>
+    <symbol id="i-screen" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="2.5"/><path d="M6.5 10h5M6.5 14h8"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#top" aria-label="JMonitor + JWidget — back to the top">JMonitor<span class="b2"> <i>+</i> JWidget</span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#temps">Features</a>
+      <a href="#install">Installation</a>
+      <a href="#models">Compatibility</a>
+      <a href="#docs">Download</a>
+      <a href="#order">Price</a>
+    </nav>
+    <div class="top-links">
+      <a class="pill" href="https://t.me/justlad" target="_blank" rel="noopener" aria-label="Message on Telegram"><svg class="ico solid"><use href="#i-tg"/></svg><span class="t">Telegram</span></a>
+      <a class="pill" href="https://max.ru/u/f9LHodD0cOIjPCg4uz_D2USYwDrlml-fD2-_0W9jn6hEyryjJQ_RfUxWfsA" target="_blank" rel="noopener" aria-label="Message on MAX"><svg class="ico solid"><use href="#i-chat"/></svg><span class="t">MAX</span></a>
+      <nav class="lang" aria-label="Language"><a href="../" hreflang="ru" lang="ru">RU</a><a href="./" hreflang="en" lang="en" aria-current="page">EN</a></nav>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-in">
+      <div>
+        <p class="kicker">For the Suzuki Jimny · JB64 · JB74 · JC74</p>
+        <h1>Everything your Jimny’s dashboard doesn’t tell you</h1>
+        <p class="lead">JMonitor puts the engine and gearbox temperature on your Android head unit in&nbsp;degrees, warns you before it overheats and shows some twenty more readings of the car. It plugs in&nbsp;between factory connectors&nbsp;— no wire is cut.</p>
+        <div class="cta">
+          <a class="btn primary" href="https://t.me/justlad" target="_blank" rel="noopener"><svg class="ico solid"><use href="#i-tg"/></svg>Message on&nbsp;Telegram</a>
+          <a class="btn" href="https://max.ru/u/f9LHodD0cOIjPCg4uz_D2USYwDrlml-fD2-_0W9jn6hEyryjJQ_RfUxWfsA" target="_blank" rel="noopener"><svg class="ico solid"><use href="#i-chat"/></svg>Message on&nbsp;MAX</a>
+        </div>
+        <p class="hero-doc"><a href="../pdf/en/jmonitor-overview.pdf" download="JMonitor overview.pdf"><svg class="ico"><use href="#i-file"/></svg>Download the overview</a><span>PDF · 2.5&nbsp;MB</span></p>
+        <p class="hero-doc"><a href="../app/jwidget-2.2.9.apk" download="jwidget-2.2.9.apk"><svg class="ico"><use href="#i-down"/></svg>Download the JWidget app</a><span>APK · 3.4&nbsp;MB</span></p>
+        <p class="need">You need an Android head unit: Android&nbsp;8.0 or newer, with&nbsp;<span class="nb">Wi-Fi</span>.</p>
+      </div>
+      <figure class="hero-photo">
+        <picture>
+          <source media="(max-width: 699px)" srcset="../img/hero-m.jpg" width="900" height="600">
+          <img src="../img/hero.jpg" srcset="../img/hero-800.jpg 800w, ../img/hero.jpg 1570w" sizes="(min-width: 940px) 560px, 100vw" width="1570" height="883" fetchpriority="high" alt="An Android head unit in a Suzuki Jimny: the JWidget card shows coolant at 94 °C and the gearbox at 84 °C">
+        </picture>
+        <figcaption>JWidget on a Jimny’s head unit</figcaption>
+      </figure>
+    </div>
+    <ul class="stats">
+      <li class="stat"><b>up to 27</b><span>readings&nbsp;— depending on the car</span></li>
+      <li class="stat"><b>≈ 10</b><span>data updates a&nbsp;second</span></li>
+      <li class="stat"><b>3 layouts</b><span>of the card, sized <span class="nb">60–200&nbsp;%</span></span></li>
+      <li class="stat"><b>0</b><span>cut wires</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="temps">
+  <div class="wrap split">
+    <div>
+      <p class="kicker">The main thing</p>
+      <h2>Engine and gearbox temperature&nbsp;— in&nbsp;degrees</h2>
+      <p class="sub">The Jimny has no temperature gauge&nbsp;— only a&nbsp;warning light, when it is already late. An&nbsp;automatic in&nbsp;sand or on&nbsp;a&nbsp;long climb is the same story. JWidget shows both temperatures as a&nbsp;number and a&nbsp;bar: the number turns yellow, then red as it heats up.</p>
+      <ul class="points">
+        <li><b>Blink.</b> An overheated temperature blinks on&nbsp;the card.</li>
+        <li><b>Sound.</b> A&nbsp;beep at once, then every 10&nbsp;seconds until the temperature drops.</li>
+        <li><b>You set the limit.</b> Coolant <span class="nb">90–115&nbsp;°C</span>, gearbox <span class="nb">100–130&nbsp;°C</span>.</li>
+      </ul>
+      <p class="note">Gearbox temperature and the engaged gear&nbsp;— on&nbsp;cars with an&nbsp;automatic.</p>
+    </div>
+    <div class="stage">
+      <div class="pair">
+        <figure class="jw">
+          <img src="../img/card-pitwall.png" width="1056" height="904" loading="lazy" decoding="async" alt="The JWidget card at normal temperatures: coolant 94 °C, gearbox 84 °C">
+          <figcaption>normal</figcaption>
+        </figure>
+        <figure class="jw">
+          <img src="../img/card-overheat.png" width="1056" height="904" loading="lazy" decoding="async" alt="The JWidget card overheating: coolant 103 °C in yellow, gearbox 116 °C in red">
+          <figcaption class="hot">overheating</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="card">
+  <div class="wrap">
+    <p class="kicker">The card</p>
+    <h2>On top of navigation and music</h2>
+    <p class="sub">Three card layouts. You choose what each position shows.</p>
+    <div class="showcase">
+      <div class="stage">
+        <div class="faces">
+          <figure class="jw pit">
+            <img src="../img/card-pitwall.png" width="1056" height="904" loading="lazy" decoding="async" alt="The Pit Wall card: two temperatures with bars, the gear and three readings below">
+            <figcaption><b>Pit Wall</b><span>six readings</span></figcaption>
+          </figure>
+          <figure class="jw min">
+            <img src="../img/card-minimal.png" width="1056" height="664" loading="lazy" decoding="async" alt="The Minimal card: two temperatures with bars and the gear">
+            <figcaption><b>Minimal</b><span>three readings</span></figcaption>
+          </figure>
+          <figure class="jw col">
+            <img src="../img/card-column.png" width="480" height="952" loading="lazy" decoding="async" alt="The Column card: narrow and upright, two temperatures and the gear">
+            <figcaption><b>Column</b><span>narrow</span></figcaption>
+          </figure>
+        </div>
+      </div>
+      <ul class="points">
+        <li><b>On top of any app.</b> Drag the card anywhere on&nbsp;the screen&nbsp;— it remembers where it stands.</li>
+        <li><b>Or as a&nbsp;widget</b> on&nbsp;the head unit’s home screen.</li>
+        <li><b>Any size</b>&nbsp;— from 60 to&nbsp;200&nbsp;%.</li>
+        <li><b>Live.</b> The data updates about 10&nbsp;times a&nbsp;second.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="readings">
+  <div class="wrap split">
+    <div>
+      <p class="kicker">Readings</p>
+      <h2>And some twenty more readings</h2>
+      <p class="sub">Any of them can go on&nbsp;the card. The Live parameters screen shows them all at once&nbsp;— together with the car’s switches.</p>
+      <div class="groups">
+        <div class="g"><h3>Engine</h3><p>Engine speed, load, ignition advance, throttle, accelerator pedal</p></div>
+        <div class="g"><h3>Intake</h3><p>Manifold pressure, barometric pressure, boost, intake air temperature</p></div>
+        <div class="g"><h3>Drivetrain</h3><p>Engaged gear, four-wheel drive 4WD and low range&nbsp;4L</p></div>
+        <div class="g"><h3>Brakes</h3><p>Brake pressure and brake booster pressure</p></div>
+        <div class="g"><h3>Fuel and speed</h3><p>Fuel level, vehicle speed</p></div>
+        <div class="g"><h3>Wheels and steering</h3><p>The speed of every wheel, steering angle</p></div>
+        <div class="g"><h3>Tyres</h3><p>The pressure in every tyre&nbsp;— pre-facelift cars with factory TPMS</p></div>
+        <div class="g"><h3>Switches</h3><p>Lights, indicators, doors, seatbelts, parking brake, A/C&nbsp;— 15&nbsp;states</p></div>
+      </div>
+      <p class="note">The set of readings depends on&nbsp;the car&nbsp;— see <a href="#models">compatibility</a>. What the car does not send, the app shows as a&nbsp;dash&nbsp;— never as a&nbsp;zero.</p>
+    </div>
+    <div>
+      <div class="lp" role="img" aria-label="Example of the Live parameters screen: coolant temperature 92 °C, gearbox temperature 78 °C, gear D3, engine speed 2150 and other readings">
+        <div class="lp-h"><svg class="ico"><use href="#i-back"/></svg>Live parameters</div>
+        <div class="lp-meta">27 available · 27 live</div>
+        <dl>
+          <div class="lp-r"><dt>Coolant temperature</dt><dd>92 °C</dd></div>
+          <div class="lp-r"><dt>Gearbox temperature</dt><dd>78 °C</dd></div>
+          <div class="lp-r"><dt>Engaged gear</dt><dd>D3</dd></div>
+          <div class="lp-r"><dt>Engine speed</dt><dd>2150</dd></div>
+          <div class="lp-r"><dt>Engine load</dt><dd>38 %</dd></div>
+          <div class="lp-r"><dt>Throttle position</dt><dd>19 %</dd></div>
+          <div class="lp-r"><dt>Manifold pressure</dt><dd>58 kPa</dd></div>
+          <div class="lp-r"><dt>Fuel level</dt><dd>64 %</dd></div>
+          <div class="lp-r"><dt>Brake pressure</dt><dd>0 bar</dd></div>
+        </dl>
+        <div class="lp-sw">SWITCHES</div>
+        <dl>
+          <div class="lp-r"><dt>4WD</dt><dd>Off</dd></div>
+          <div class="lp-r"><dt>4L</dt><dd>Off</dd></div>
+          <div class="lp-r"><dt>Headlamps</dt><dd>On</dd></div>
+          <div class="lp-r"><dt>Tail lamps</dt><dd>On</dd></div>
+        </dl>
+        <div class="lp-more">…and 18&nbsp;more readings and 11&nbsp;switches</div>
+      </div>
+      <p class="lp-cap">The Live parameters screen in&nbsp;the JWidget app</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="how">
+  <div class="wrap">
+    <p class="kicker">How it works</p>
+    <h2>It listens to&nbsp;the car and changes nothing in&nbsp;it</h2>
+    <div class="flow">
+      <div class="node">
+        <div class="ni"><svg class="ico"><use href="#i-car"/></svg></div>
+        <div><b>The car</b><span>Its modules talk to&nbsp;each other over the CAN bus</span></div>
+      </div>
+      <div class="hop" aria-hidden="true">CAN bus<svg class="ico"><use href="#i-arrow"/></svg></div>
+      <div class="node hl">
+        <div class="ni"><svg class="ico"><use href="#i-chip"/></svg></div>
+        <div><b>JMonitor</b><span>Sits behind the instrument cluster and only listens</span></div>
+      </div>
+      <div class="hop" aria-hidden="true"><span class="nb">Wi-Fi</span><svg class="ico"><use href="#i-arrow"/></svg></div>
+      <div class="node">
+        <div class="ni"><svg class="ico"><use href="#i-screen"/></svg></div>
+        <div><b>Head unit</b><span>The JWidget app shows the data on&nbsp;screen</span></div>
+      </div>
+    </div>
+    <div class="facts">
+      <div class="fact"><h3>Listens only</h3><p>JMonitor sends nothing to&nbsp;the car’s bus. It neither reads nor clears fault codes.</p></div>
+      <div class="fact"><h3>Leaves the wiring alone</h3><p>The harness plugs in&nbsp;between factory connectors. The OBD port stays free.</p></div>
+      <div class="fact"><h3>Every unit has its own key</h3><p>The data on&nbsp;<span class="nb">Wi-Fi</span> is encrypted. Without the key from the card, it cannot be read.</p></div>
+      <div class="fact"><h3>Sleeps with the car</h3><p>The unit goes to&nbsp;sleep once the bus goes quiet, and wakes up by itself.</p></div>
+      <div class="fact"><h3>One-button updates</h3><p>The firmware comes inside the app. If anything goes wrong, the unit goes back to&nbsp;the previous one by itself.</p></div>
+      <div class="fact"><h3>Bench-tested</h3><p>Every unit, before it ships.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="install">
+  <div class="wrap">
+    <p class="kicker">Installation</p>
+    <h2>Between factory connectors</h2>
+    <p class="sub">No cutting and no soldering. It comes out the same way, and the car is stock again.</p>
+    <p class="warn"><svg class="ico"><use href="#i-warn"/></svg><span><b>Before you start, disconnect the battery:</b> take off the negative terminal.</span></p>
+    <ol class="steps">
+      <li class="step">
+        <img src="../img/install-1.jpg" width="960" height="723" loading="lazy" decoding="async" alt="A hand takes hold of the lower edge of the instrument cluster hood">
+        <span class="n">1</span>
+        <p><b>Take hold</b> of&nbsp;the lower edge of&nbsp;the instrument cluster hood.</p>
+      </li>
+      <li class="step">
+        <img src="../img/install-2.jpg" width="960" height="723" loading="lazy" decoding="async" alt="The instrument cluster hood is pulled towards the driver">
+        <span class="n">2</span>
+        <p><b>Pull it towards you:</b> it sits on&nbsp;clips, no tools needed.</p>
+      </li>
+      <li class="step">
+        <img src="../img/install-3.jpg" width="960" height="723" loading="lazy" decoding="async" alt="The connectors behind the instrument cluster: arrows show the factory plug and the harness connector">
+        <span class="n">3</span>
+        <p><b>Plug the harness in&nbsp;between:</b> the harness connector into the cluster, the factory plug into the harness, until they click.</p>
+      </li>
+    </ol>
+    <p class="after">Reconnect the battery and switch the ignition on: the cluster works as usual, and a&nbsp;<span class="nb">Wi-Fi</span> network <span class="nb">“Jimny-XXXX”</span> shows in&nbsp;the list. The unit recognises the model and the gearbox by itself.</p>
+    <p class="more"><a class="btn" href="../pdf/en/jmonitor-installation.pdf" download="Installing JMonitor in the car.pdf"><svg class="ico"><use href="#i-file"/></svg>Installation guide, PDF</a></p>
+  </div>
+</section>
+
+<section class="sec alt" id="models">
+  <div class="wrap">
+    <p class="kicker">Compatibility</p>
+    <h2>Which cars</h2>
+    <p class="sub">The fourth-generation Suzuki Jimny: JB64, JB74, JC74&nbsp;— automatic and manual, pre-facelift and facelift.</p>
+    <ul class="defs">
+      <li><b>Pre-facelift</b>&nbsp;— monochrome instrument cluster, before&nbsp;2026.</li>
+      <li><b>Facelift</b>&nbsp;— colour instrument cluster, from&nbsp;2026.</li>
+    </ul>
+    <div class="models">
+      <article class="model">
+        <div>
+          <p class="gen">Pre-facelift</p>
+          <h3>Automatic</h3>
+          <p class="num"><b>23</b>readings +&nbsp;tyres*</p>
+        </div>
+        <ul class="has">
+          <li><svg class="ico"><use href="#i-check"/></svg>Engine temperature</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Gearbox temperature, gear</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Tyre pressures*</li>
+        </ul>
+      </article>
+      <article class="model">
+        <div>
+          <p class="gen">Pre-facelift</p>
+          <h3>Manual</h3>
+          <p class="num"><b>16</b>readings +&nbsp;tyres*</p>
+        </div>
+        <ul class="has">
+          <li><svg class="ico"><use href="#i-check"/></svg>Engine temperature</li>
+          <li class="no"><svg class="ico"><use href="#i-minus"/></svg>Gearbox temperature, gear</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Tyre pressures*</li>
+        </ul>
+      </article>
+      <article class="model">
+        <div>
+          <p class="gen">Facelift</p>
+          <h3>Automatic</h3>
+          <p class="num"><b>16</b>readings</p>
+        </div>
+        <ul class="has">
+          <li><svg class="ico"><use href="#i-check"/></svg>Engine temperature</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Gearbox temperature, gear</li>
+          <li class="no"><svg class="ico"><use href="#i-minus"/></svg>Tyre pressures</li>
+        </ul>
+      </article>
+      <article class="model">
+        <div>
+          <p class="gen">Facelift</p>
+          <h3>Manual</h3>
+          <p class="num"><b>14</b>readings</p>
+        </div>
+        <ul class="has">
+          <li><svg class="ico"><use href="#i-check"/></svg>Engine temperature</li>
+          <li class="no"><svg class="ico"><use href="#i-minus"/></svg>Gearbox temperature, gear</li>
+          <li class="no"><svg class="ico"><use href="#i-minus"/></svg>Tyre pressures</li>
+        </ul>
+      </article>
+    </div>
+    <p class="note">* On&nbsp;cars with factory tyre pressure monitoring (TPMS). The full list of readings by model is in&nbsp;the <a href="../pdf/en/jmonitor-overview.pdf" download="JMonitor overview.pdf">overview</a>.</p>
+    <p class="callout"><b>You need an Android head unit:</b> Android&nbsp;8.0 or newer, with&nbsp;<span class="nb">Wi-Fi</span>. The unit does not work with the factory radio.</p>
+  </div>
+</section>
+
+<section class="sec" id="docs">
+  <div class="wrap">
+    <p class="kicker">Download</p>
+    <h2>The app and the guides</h2>
+    <p class="sub">The JWidget app for the head unit, and four PDF guides in&nbsp;English, with pictures.</p>
+    <div class="docs">
+      <div class="doc main" id="app">
+        <div class="fi"><svg class="ico"><use href="#i-down"/></svg></div>
+        <div class="tx">
+          <h3>JWidget app</h3>
+          <p>For an Android head unit: Android&nbsp;8.0 or newer. It installs from an&nbsp;.apk file.</p>
+          <p class="meta">APK · version 2.2.9 · 3.4 MB</p>
+        </div>
+        <div class="acts">
+          <a class="btn primary" href="../app/jwidget-2.2.9.apk" download="jwidget-2.2.9.apk"><svg class="ico"><use href="#i-down"/></svg>Download the app</a>
+        </div>
+      </div>
+      <div class="doc main">
+        <div class="fi"><svg class="ico"><use href="#i-file"/></svg></div>
+        <div class="tx">
+          <h3>JMonitor overview</h3>
+          <p>What it shows, how it works, the full list of readings by model.</p>
+          <p class="meta">PDF · 6 pages · 2.5 MB</p>
+        </div>
+        <div class="acts">
+          <a class="btn primary" href="../pdf/en/jmonitor-overview.pdf" download="JMonitor overview.pdf"><svg class="ico"><use href="#i-down"/></svg>Download PDF</a>
+          <a class="btn" href="../pdf/en/jmonitor-overview.pdf" target="_blank" rel="noopener">Open</a>
+        </div>
+      </div>
+      <a class="doc" href="../pdf/en/jmonitor-installation.pdf" download="Installing JMonitor in the car.pdf">
+        <div class="fi"><svg class="ico"><use href="#i-file"/></svg></div>
+        <div class="tx">
+          <h3>Installing JMonitor in&nbsp;the car</h3>
+          <p>Steps with photos: from the battery to&nbsp;the check.</p>
+          <p class="meta">PDF · 2 pages · 1.5 MB</p>
+        </div>
+        <svg class="ico dl" aria-hidden="true"><use href="#i-down"/></svg>
+      </a>
+      <a class="doc" href="../pdf/en/jwidget-app-setup.pdf" download="Setting up the JWidget app.pdf">
+        <div class="fi"><svg class="ico"><use href="#i-file"/></svg></div>
+        <div class="tx">
+          <h3>Setting up the app</h3>
+          <p>Installing JWidget, the <span class="nb">Wi-Fi</span> link, the first start.</p>
+          <p class="meta">PDF · 6 pages · 0.4 MB</p>
+        </div>
+        <svg class="ico dl" aria-hidden="true"><use href="#i-down"/></svg>
+      </a>
+      <a class="doc" href="../pdf/en/jwidget-app-settings.pdf" download="JWidget app settings.pdf">
+        <div class="fi"><svg class="ico"><use href="#i-file"/></svg></div>
+        <div class="tx">
+          <h3>App settings</h3>
+          <p>Every section and every setting, with pictures of&nbsp;the screens.</p>
+          <p class="meta">PDF · 9 pages · 0.9 MB</p>
+        </div>
+        <svg class="ico dl" aria-hidden="true"><use href="#i-down"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="order">
+  <div class="wrap split">
+    <figure class="order-photo">
+      <img src="../img/unit.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="The JMonitor unit in black heat-shrink with its harness and two white connectors">
+    </figure>
+    <div>
+      <p class="kicker">Kit and price</p>
+      <h2>In the box</h2>
+      <ul class="box">
+        <li><svg class="ico"><use href="#i-check"/></svg>The JMonitor unit with a&nbsp;ready-made harness</li>
+        <li><svg class="ico"><use href="#i-check"/></svg>A&nbsp;key card</li>
+        <li><svg class="ico"><use href="#i-check"/></svg>The JWidget app (.apk file) and the guides</li>
+      </ul>
+      <p class="price"><b>US$100</b><span>Worldwide shipping by&nbsp;post</span></p>
+      <p class="note">The JWidget app and its updates are free.</p>
+      <p class="where">Orders and questions:</p>
+      <div class="cta">
+        <a class="btn primary" href="https://t.me/justlad" target="_blank" rel="noopener"><svg class="ico solid"><use href="#i-tg"/></svg>Message on&nbsp;Telegram</a>
+        <a class="btn" href="https://max.ru/u/f9LHodD0cOIjPCg4uz_D2USYwDrlml-fD2-_0W9jn6hEyryjJQ_RfUxWfsA" target="_blank" rel="noopener"><svg class="ico solid"><use href="#i-chat"/></svg>Message on&nbsp;MAX</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="faq">
+  <div class="wrap">
+    <p class="kicker">Questions</p>
+    <h2>Questions and answers</h2>
+    <div class="faq">
+      <details class="qa"><summary>Does it work with the factory radio?</summary><p>No. It needs a&nbsp;head unit with Android&nbsp;8.0 or newer, with&nbsp;<span class="nb">Wi-Fi</span>.</p></details>
+      <details class="qa"><summary>Can I&nbsp;watch it on&nbsp;a&nbsp;phone?</summary><p>Yes, JWidget installs on&nbsp;an Android phone too. But the unit is made for the head unit: a&nbsp;card over navigation, no phone in&nbsp;your hand.</p></details>
+      <details class="qa"><summary>Is it an OBD scanner?</summary><p>No. Nothing goes into the OBD port; it stays free. JMonitor sits behind the instrument cluster, out of&nbsp;sight.</p></details>
+      <details class="qa"><summary>Does the unit change anything in&nbsp;the car?</summary><p>No. It only listens to&nbsp;the bus and sends nothing to&nbsp;it. It neither reads nor clears fault codes.</p></details>
+      <details class="qa"><summary>Why does my car show fewer readings?</summary><p>A&nbsp;manual car does not send a&nbsp;gearbox temperature, and the facelift does not send some of&nbsp;the engine readings. What the car does not send, the app shows as a&nbsp;dash.</p></details>
+      <details class="qa"><summary>Will my car show tyre pressures?</summary><p>If it has factory tyre pressure monitoring (TPMS) and is a&nbsp;pre-facelift car&nbsp;— yes.</p></details>
+      <details class="qa"><summary>Will it drain the battery?</summary><p>The unit goes to&nbsp;sleep with the car, once the bus goes quiet.</p></details>
+      <details class="qa"><summary>What language is the app in?</summary><p>English. The guides are in&nbsp;English and Russian, with pictures of&nbsp;the screens.</p></details>
+      <details class="qa"><summary>Is the app in&nbsp;an app store?</summary><p>No, it installs from an&nbsp;.apk file. The file is on&nbsp;this page, under <a href="#app">“The app and the guides”</a>. New versions appear there too.</p></details>
+      <details class="qa"><summary>What if an update goes wrong?</summary><p>The unit goes back to&nbsp;its previous firmware by itself and works as before.</p></details>
+      <details class="qa"><summary>Can I&nbsp;take it out before a&nbsp;dealer visit?</summary><p>Yes: disconnect the battery, take the hood off, pull the harness out, plug the factory connector back in.</p></details>
+    </div>
+    <div class="faq" id="versions">
+      <details class="qa">
+        <summary>Versions</summary>
+        <p><b>JWidget app&nbsp;— 2.2.9</b>, 20&nbsp;November 2026<br><b>JMonitor firmware&nbsp;— 2.2.2</b>, it comes inside the app</p>
+        <p>New in&nbsp;2.2.9:</p>
+        <ul>
+          <li>Works next to&nbsp;wireless Android Auto and CarPlay: with the phone on&nbsp;the adapter’s <span class="nb">Wi-Fi</span> and the unit on&nbsp;the phone’s hotspot, the app finds the unit whenever the hotspot is switched on.</li>
+        </ul>
+        <p>New in&nbsp;2.2.8, 16&nbsp;November 2026:</p>
+        <ul>
+          <li>The app finds the unit by itself&nbsp;— right after it is installed, and when the unit is on&nbsp;your hotspot. There is nothing to&nbsp;set up.</li>
+          <li>Updating the unit takes one button: join its <span class="nb">Wi-Fi</span>, start the engine and tap “Update the monitor”.</li>
+        </ul>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="#top">JMonitor <i>+</i> JWidget</a>
+    <div class="foot-links">
+      <span>Development channel:</span>
+      <a class="pill" href="https://t.me/just_lad_jimny" target="_blank" rel="noopener" aria-label="Development channel on Telegram"><svg class="ico solid"><use href="#i-tg"/></svg>Telegram</a>
+      <a class="pill" href="https://max.ru/channel_justlad" target="_blank" rel="noopener" aria-label="Development channel on MAX"><svg class="ico solid"><use href="#i-chat"/></svg>MAX</a>
+    </div>
+    <p class="legal">JMonitor and JWidget are an independent project, not affiliated with Suzuki Motor Corporation. Suzuki and Jimny are trademarks of&nbsp;their respective owners.</p>
+  </div>
+</footer>
+
+</body>
+</html>
