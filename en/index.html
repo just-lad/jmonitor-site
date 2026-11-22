@@ -42,6 +42,11 @@
     <symbol id="i-car" viewBox="0 0 24 24"><path d="M4 15v-3.2l1.9-5.1A1.6 1.6 0 0 1 7.4 5.6h9.2a1.6 1.6 0 0 1 1.5 1.1L20 11.8V15"/><path d="M3 15h18v3H3z"/><path d="M6.5 18v1.6M17.5 18v1.6M5 11.6h14"/></symbol>
     <symbol id="i-chip" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></symbol>
     <symbol id="i-screen" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="2.5"/><path d="M6.5 10h5M6.5 14h8"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M7 7l10 10M17 7 7 17"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M3.5 7.5 12 3.2l8.5 4.3v9L12 20.8l-8.5-4.3z"/><path d="M3.5 7.5 12 11.8l8.5-4.3M12 11.8v9"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.8-6.5-11A6.5 6.5 0 0 1 18.5 10c0 5.2-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.4"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4.8 5.9v5.4c0 4.5 3.1 8.2 7.2 9.4 4.1-1.2 7.2-4.9 7.2-9.4V5.9z"/><path d="m8.9 12 2.2 2.2 4-4.4"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3.5" y="8" width="17" height="4" rx="1"/><path d="M5 12v8h14v-8M12 8v12M12 8S10.6 4 8.4 4a2 2 0 0 0 0 4M12 8s1.4-4 3.6-4a2 2 0 0 1 0 4"/></symbol>
   </defs>
 </svg>
 
@@ -237,7 +242,31 @@
   </div>
 </section>
 
-<section class="sec" id="install">
+<section class="sec" id="compare">
+  <div class="wrap">
+    <p class="kicker">Comparison</p>
+    <h2>Not an OBD adapter, not a&nbsp;screen on&nbsp;the dash</h2>
+    <p class="sub">An ELM327 adapter and an OBD screen plug into the diagnostic port and query the car’s modules. JMonitor sits behind the instrument cluster and listens to&nbsp;the data the modules already exchange.</p>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <thead>
+          <tr><th scope="col"><span class="sr">Feature</span></th><th scope="col" class="me">JMonitor</th><th scope="col">ELM327</th><th scope="col">OBD screen</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">The OBD port stays free</th><td class="me"><svg class="ico y" aria-hidden="true"><use href="#i-check"/></svg><span class="sr">yes</span></td><td><svg class="ico n" aria-hidden="true"><use href="#i-x"/></svg><span class="sr">no</span></td><td><svg class="ico n" aria-hidden="true"><use href="#i-x"/></svg><span class="sr">no</span></td></tr>
+          <tr><th scope="row">Only listens, sends nothing to&nbsp;the car</th><td class="me"><svg class="ico y" aria-hidden="true"><use href="#i-check"/></svg><span class="sr">yes</span></td><td><svg class="ico n" aria-hidden="true"><use href="#i-x"/></svg><span class="sr">no</span></td><td><svg class="ico n" aria-hidden="true"><use href="#i-x"/></svg><span class="sr">no</span></td></tr>
+          <tr><th scope="row">Nothing extra on&nbsp;the dashboard</th><td class="me"><svg class="ico y" aria-hidden="true"><use href="#i-check"/></svg><span class="sr">yes</span></td><td><svg class="ico y" aria-hidden="true"><use href="#i-check"/></svg><span class="sr">yes</span></td><td><svg class="ico n" aria-hidden="true"><use href="#i-x"/></svg><span class="sr">no</span></td></tr>
+          <tr><th scope="row">Gearbox temperature with no setup</th><td class="me"><svg class="ico y" aria-hidden="true"><use href="#i-check"/></svg><span class="sr">yes</span></td><td><svg class="ico n" aria-hidden="true"><use href="#i-x"/></svg><span class="sr">no</span></td><td><span class="s">not always</span></td></tr>
+          <tr><th scope="row">The Jimny’s 4WD, 4L and switches</th><td class="me"><svg class="ico y" aria-hidden="true"><use href="#i-check"/></svg><span class="sr">yes</span></td><td><svg class="ico n" aria-hidden="true"><use href="#i-x"/></svg><span class="sr">no</span></td><td><svg class="ico n" aria-hidden="true"><use href="#i-x"/></svg><span class="sr">no</span></td></tr>
+          <tr><th scope="row">2026 facelift: engine and gearbox temperature</th><td class="me"><svg class="ico y" aria-hidden="true"><use href="#i-check"/></svg><span class="sr">yes</span></td><td><svg class="ico n" aria-hidden="true"><use href="#i-x"/></svg><span class="sr">no</span></td><td><svg class="ico n" aria-hidden="true"><use href="#i-x"/></svg><span class="sr">no</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="callout"><b>The one thing it needs is an Android head unit:</b> Android&nbsp;8.0 or newer, with&nbsp;<span class="nb">Wi-Fi</span>.</p>
+  </div>
+</section>
+
+<section class="sec alt" id="install">
   <div class="wrap">
     <p class="kicker">Installation</p>
     <h2>Between factory connectors</h2>
@@ -265,7 +294,7 @@
   </div>
 </section>
 
-<section class="sec alt" id="models">
+<section class="sec" id="models">
   <div class="wrap">
     <p class="kicker">Compatibility</p>
     <h2>Which cars</h2>
@@ -329,7 +358,7 @@
   </div>
 </section>
 
-<section class="sec" id="docs">
+<section class="sec alt" id="docs">
   <div class="wrap">
     <p class="kicker">Download</p>
     <h2>The app and the guides</h2>
@@ -389,7 +418,7 @@
   </div>
 </section>
 
-<section class="sec alt" id="order">
+<section class="sec" id="order">
   <div class="wrap split">
     <figure class="order-photo">
       <img src="../img/unit.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="The JMonitor unit in black heat-shrink with its harness and two white connectors">
@@ -403,7 +432,11 @@
         <li><svg class="ico"><use href="#i-check"/></svg>The JWidget app (.apk file) and the guides</li>
       </ul>
       <p class="price"><b>US$100</b><span>Worldwide shipping by&nbsp;post</span></p>
-      <p class="note">The JWidget app and its updates are free.</p>
+      <ul class="terms">
+        <li><svg class="ico"><use href="#i-box"/></svg><span><b>In stock</b>, ready to ship</span></li>
+        <li><svg class="ico"><use href="#i-shield"/></svg><span><b>Any manufacturing defect</b>&nbsp;— a&nbsp;free exchange or a&nbsp;full refund</span></li>
+        <li><svg class="ico"><use href="#i-gift"/></svg><span><b>The JWidget app and its updates</b> are free</span></li>
+      </ul>
       <p class="where">Orders and questions:</p>
       <div class="cta">
         <a class="btn primary" href="https://t.me/justlad" target="_blank" rel="noopener"><svg class="ico solid"><use href="#i-tg"/></svg>Message on&nbsp;Telegram</a>
@@ -413,7 +446,7 @@
   </div>
 </section>
 
-<section class="sec" id="faq">
+<section class="sec alt" id="faq">
   <div class="wrap">
     <p class="kicker">Questions</p>
     <h2>Questions and answers</h2>
@@ -428,6 +461,7 @@
       <details class="qa"><summary>What language is the app in?</summary><p>English. The guides are in&nbsp;English and Russian, with pictures of&nbsp;the screens.</p></details>
       <details class="qa"><summary>Is the app in&nbsp;an app store?</summary><p>No, it installs from an&nbsp;.apk file. The file is on&nbsp;this page, under <a href="#app">“The app and the guides”</a>. New versions appear there too.</p></details>
       <details class="qa"><summary>What if an update goes wrong?</summary><p>The unit goes back to&nbsp;its previous firmware by itself and works as before.</p></details>
+      <details class="qa"><summary>What if the unit is faulty?</summary><p>Any manufacturing defect: a&nbsp;free exchange or a&nbsp;full refund.</p></details>
       <details class="qa"><summary>Can I&nbsp;take it out before a&nbsp;dealer visit?</summary><p>Yes: disconnect the battery, take the hood off, pull the harness out, plug the factory connector back in.</p></details>
     </div>
     <div class="faq" id="versions">
