@@ -92,9 +92,9 @@ h3{font-size:1.0625rem;line-height:1.3;font-weight:700}
 .jw figcaption b{display:block;color:#fff;font-size:.9375rem}
 .jw figcaption span{font-weight:400}
 .pair{display:grid;gap:24px;justify-items:center}
-.faces{display:grid;grid-template-columns:264fr 120fr;grid-template-areas:"pit col" "min col";gap:22px 16px;align-items:center;max-width:720px;margin-inline:auto}
+.faces{display:grid;grid-template-columns:264fr 120fr;grid-template-areas:"pit col" "min col" "cor col";gap:22px 16px;align-items:center;max-width:720px;margin-inline:auto}
 .faces .jw img{width:100%}
-.faces .pit{grid-area:pit}.faces .min{grid-area:min}.faces .col{grid-area:col}
+.faces .pit{grid-area:pit}.faces .min{grid-area:min}.faces .cor{grid-area:cor}.faces .col{grid-area:col}
 .showcase{display:grid;gap:24px;margin-top:26px}
 .showcase .points{margin-top:0}
 
@@ -262,7 +262,8 @@ footer{padding:32px 0 40px;border-top:1px solid rgba(255,255,255,.06);background
   .stage{padding:28px 24px}
 }
 @media (min-width:680px){
-  .faces{grid-template-columns:264fr 264fr 120fr;grid-template-areas:"pit min col";gap:28px;align-items:start}
+  .faces{grid-template-columns:1fr 1fr;grid-template-areas:"pit min" "cor col";gap:32px 28px;align-items:end;max-width:600px}
+  .faces .col img{width:45.4545%}
 }
 @media (min-width:720px){
   .steps{grid-template-columns:repeat(3,1fr);gap:20px}
